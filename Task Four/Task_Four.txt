@@ -1,0 +1,56 @@
+"""
+1. Write a program to reverse a string.
+Sample input: “1234abcd”
+Expected output: “dcba4321”
+
+"""
+def inv(n):
+    return n[::-1]
+b = inv("1234abcd")
+print(b)
+
+"""
+2. Write a function that accepts a string and prints the number of uppercase letters and lowercase
+letters.
+Sample input: “abcSdefPghijQkl”
+Expected Output: No. of Uppercase characters : 3 No. of Lower case Characters : 12
+"""
+
+def case(n):
+    lower = 0
+    upper = 0
+    for i in n:
+        if i.isupper():
+            upper +=1
+        elif i.islower():
+            lower +=1
+    print(f"No. of Uppercase characters : {upper} No. of Lower case Characters : {lower}")
+
+case("abcSdefPghijQkl")
+
+"""
+3. Create a function that takes a list and returns a new list with unique elements of the first list.
+"""
+
+def case(n):
+    l = []
+    for i in n:
+        if i not in l:
+            l.append(i)
+    return l
+
+n = [1,1,2,2,5,3]
+
+b = case(n)
+print(b)
+
+"""
+4. Write a program that accepts a hyphen-separated sequence of words as input and prints the words
+in a hyphen-separated sequence after sorting them alphabetically.
+"""
+a = input("Input hyphen-separated sequence: ").split("-")
+print(a)
+a.sort()
+print(a)
+
+
