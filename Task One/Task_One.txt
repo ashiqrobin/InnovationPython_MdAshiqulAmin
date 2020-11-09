@@ -1,0 +1,108 @@
+"""
+1. Create three variables in a single line and assign values to them in such a manner that each one of
+them belongs to a different data type.
+E.g. :
+a = 1,
+b = 2.01,
+c = 'string'
+"""
+a, b, c = 1, 2.01, 'string'
+
+"""
+2. Create a variable of type complex and swap it with another variable of type integer.
+"""
+a = 5
+b = 2+3j
+a, b = b, a
+
+"""
+3. Swap two numbers using a third variable and do the same task without using any third variable
+"""
+# using a third variable
+a = 5
+b = 6.4
+
+print("Value of a: ", a)
+print("value of b: ", b)
+
+temp = a
+a = b
+b = temp
+
+print("Value of a after swap: ", a)
+print("value of b after swap: ", b)
+
+# using a third variable
+
+a, b = b, a
+
+print("Value of a after 2nd swap: ", a)
+print("value of b after 2nd swap: ", b)
+
+"""
+4. Write a program that takes input from the user and prints it using both Python 2.x and Python 3.x
+Version.
+"""
+print("""
+Choose 1 for Python 2.X input
+Choose 2 for Python 3.X input
+""")
+
+n = int(input("Put 1 or 2: "))
+
+if n == 1:
+    a = eval(raw_input("Input: "))
+    print("Python 2.X input is: ",a)
+elif n == 2:
+    a = eval(input("Input: "))
+    print("Python 3.X input is: ",a)
+else:
+    print("Wrong Input")
+
+"""
+5. Write a program to complete the task given below:
+Ask users to enter any 2 numbers in between 1-10 , add the two numbers and keep the sum in
+another variable called z. Add 30 to z and store the output in variable result and print result as the
+final output.
+"""
+n =list(map(int, input("Enter two number between 1-10: ").split()))
+z = n[0] + n[1]
+result = z + 30
+
+print("final output:",result)
+
+"""
+6. Write a program to check the data type of the entered values.
+HINT: Printed output should say - The data type of the input value is : int/float/string/etc
+"""
+n = eval(input("Entered Value: "))
+print("Thr data type of the input value is:",type(n).__name__)
+
+"""
+7. Create Variables using formats such as Upper CamelCase, Lower CamelCase, SnakeCase and
+UPPERCASE.
+(Refer: https://capitalizemytitle.com/camel-case/)
+"""
+a = 'amin ashiq'
+
+# Upper CamelCase
+print(a.title())
+
+#lower CamelCase
+print(a.lower())
+
+#Snake Case
+b = a.split()
+print(b[0].lower()+'_'+b[1].lower())
+
+#UPPERCAE
+print(a.upper())
+
+"""
+8. If one data type value is assigned to ‘a’ variable and then a different data type value is assigned to ‘a’
+again. Will it change the value? If Yes then Why?
+"""
+
+""" 
+It will change with new data type as the memory address will be updated
+""" 
