@@ -53,4 +53,173 @@ print(a)
 a.sort()
 print(a)
 
+""
+5. Write a program that accepts a sequence of lines as input and prints the lines after making all
+characters in the sentence capitalized.
+Sample input: Hello world Practice makes man perfect
+Expected output: HELLO WORLD PRACTICE MAKES MAN PERFECT
 
+"""
+a = input("Enter Line: ")
+print(a)
+print(a.upper())
+
+"""
+6. Define a function that can receive two integral numbers in string form and compute their sum and
+print it in the console.
+"""
+def summation(a):
+    x = list(map(int, a))
+    print(sum(x))
+
+inp = input("Two integral numbers in string form: ").split()
+summation(inp)
+
+"""
+7. Define a function that can accept two strings as input and print the string with the maximum length
+in the console. If two strings have the same length, then the function should print both the strings line
+by line.
+"""
+def max_str(a,b):
+    if len(a)> len(b):
+        print(f"String: {a} and Length: {len(a)}")
+    elif len(b)> len(a):
+        print(f"String: {b} and Length: {len(b)}")
+    elif len(a)==len(b):
+        print(f"{a} and {b} equal in length and Length: {len(a)} ")
+    pass
+
+string_1 = input("Input the first string: ")
+string_2 = input("Input the second string: ")
+
+max_str(string_1,string_2)
+
+"""
+8. Define a function which can generate and print a tuple where the values are square of numbers
+between 1 and 20 (both 1 and 20 included).
+"""
+def tup():
+    l = []
+    for i in range(1,21):
+        l.append(i*i)
+    x = tuple(l)
+    return x
+
+b = tup()
+print(b)
+
+"""
+9. Write a function called showNumbers that takes a parameter called limit. It should print all the
+numbers between 0 and limit with a label to identify the even and odd numbers.
+Sample input: show Numbers(3) (where limit=3)
+Expected output:
+0 EVEN
+1 ODD
+2 EVEN
+3 ODD
+"""
+def showNumber(n):
+    for i in range(n+1):
+        if i%2 == 0:
+            print(i," EVEN")
+        else:
+            print(i," ODD")
+
+showNumber(4)
+
+"""
+10. Write a program which uses filter() to make a list whose elements are even numbers between 1
+and 20 (both included)
+"""
+
+def is_even(n):
+    return n%2 == 0
+nums = [1,2,3,4,5,6,7,8,9,10]
+even = list(filter(is_even,nums))
+print(even)
+
+"""
+11. Write a program which uses map() and filter() to make a list whose elements are squares of even
+numbers in [1,2,3,4,5,6,7,8,9,10].
+Hints: Use filter() to filter even elements of the given listUse map() to generate a list of squares of the
+numbers in the filtered list. Use lambda() to define anonymous functions.
+"""
+nums = [1,2,3,4,5,6,7,8,9,10]
+even = list(filter(lambda x : x%2==0,nums))
+print(even)
+sq_even = list(map(lambda x:x*x,even))
+print(sq_even)
+
+"""
+12. Write a function to compute 5/0 and use try/except to catch the exceptions
+"""
+def div(a,b):
+    try:
+        print(a/b)
+    except ZeroDivisionError:
+        print("Divided by Zero is Not possible")
+
+div(5,0)
+
+"""
+13. Flatten the list [1,2,3,4,5,6,7] into 1234567 using reduce().
+"""
+from functools import reduce
+a=[1,2,3,4,5,6,7]
+c = list(map(str,a))
+b=reduce(lambda x,y: x+y,c)
+print(b)
+
+"""
+14. Write a program in Python to find the values which are not divisible by 3 but are a multiple of 7.
+Make sure to use only higher order functions.
+"""
+nums = input("Enter Values: ").split()
+print(nums)
+b = list(map(int,nums))
+a = list(filter(lambda x: x%3!=0 and x%7==0,b))
+print(a)
+
+"""
+15. Write a program in Python to multiply the elements of a list by itself using a traditional function
+and pass the function to map() to complete the operation.
+"""
+num =[1,2,3,4,5]
+def mul(x):
+    return x*x
+
+a = list(map(mul,num))
+print(a)
+
+"""
+16. What is the output of the following codes:
+"""
+"""
+(i)
+def foo():
+    try:
+        return 1
+    finally:
+        return 2
+k = foo()
+print(k)
+
+Output:
+2
+"""
+
+"""
+(ii)
+def a():
+    try:
+        f(x, 4)
+    finally:
+        print('after f')
+        print('after f?')
+a()
+
+Output:
+after f
+after f?
+NameError: name 'f' is not defined
+"""
