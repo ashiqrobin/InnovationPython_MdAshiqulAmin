@@ -1,0 +1,64 @@
+'''
+1. Write a program in Python to find out the character in a string which is uppercase using list
+comprehension.
+'''
+
+name = 'Amir Khan'
+name_r = [x for x in name if x.isupper()]
+print(name_r)
+
+
+'''
+2. Write a program to construct a dictionary from the two lists containing the names of students and
+their corresponding subjects. The dictionary should map the students with their respective subjects.
+Let’s see how to do this using for loops and dictionary comprehension.
+HINT - Use Zip function also
+Sample input: students = ['Smit', 'Jaya', 'Rayyan'] subjects = ['CSE', 'Networking', 'Operating System']
+Expected output: {‘Smit’ : ’CSE’ , ’Jaya’ : ’Networking’ , ’Rayyan’ : ’Operating System’}
+'''
+
+students = ['Smit', 'Jaya', 'Rayyan']
+subjects = ['CSE', 'Networking', 'Operating System']
+
+Output = dict(zip(students,subjects))
+print(Output)
+
+'''
+4. Write a program in Python using generators to reverse the string.
+Input String = “Consultadd Training”
+'''
+
+def inp_str(string):
+    n = len(string)+1
+    for i in range(1,n):
+        yield string[-i]
+
+if __name__ == "__main__":
+    a = inp_str(input("Input String: "))
+    ch_str = ''
+    for i in a:
+        ch_str += i
+
+
+'''
+5. Write an example on decorators.
+'''
+
+
+def hello_decorator(func):
+    def inner1():
+        print("Hello, this is before function execution")
+
+        func()
+
+        print("This is after function execution")
+
+    return inner1
+
+def function_to_be_used():
+    print("This is inside the function !!")
+
+function_to_be_used = hello_decorator(function_to_be_used)
+function_to_be_used()
+
+    print(ch_str)
