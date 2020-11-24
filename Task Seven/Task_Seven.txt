@@ -18,3 +18,58 @@ if __name__ == "__main__":
     d = list(map(int,input("Enter the value of D: ").split(",")))
     for i in d:
         square_root(i)
+
+'''
+2. Define a class named Shape and its subclass Square. The Square class has an init function which
+takes length as argument. Both classes have an area function which can print the area of the shape
+where Shape’s area is 0 by default.
+'''
+
+class Shape():
+    def area(self,area=0):
+        print('Shapes area',area)
+
+
+class Square(Shape):
+    def __init__(self, length):
+        self.length = length
+    def area(self,area=0):
+        print('Shapes area',area)
+
+'''
+3. Create a class to find three elements that sum to zero from a set of n real numbers
+Input array: [-25,-10,-7,-3,2,4,8,10]
+Expected output: [[-10,2,8],[-7,-3,10]]
+'''
+class sum_zero:
+    def __init__(self):
+        self.l1 = []
+
+    def out_list(self,list_e):
+        sum = 0
+        n=len(list_e)
+        if n >= 3:
+            for i in range(0,n-1):
+                a = list_e[i]
+                for j in range(1,n):
+                    b=list_e[j]
+                    c = sum-a-b
+                    if c in list_e:
+                        self.l1.append([a,b,c])
+                        print(self.l1)
+                        list_e.remove(a)
+                        list_e.remove(b)
+                        list_e.remove(c)
+                        #print(self.list_e)
+                        self.out_list(list_e)
+                list_e.remove(a)
+                self.out_list(list_e)
+        else:
+            print(self.l1)
+
+if __name__ == "__main__":
+    nl = sum_zero()
+    nl.out_list([-25,-10,-7,-3,2,4,8,10])
+
+
+
