@@ -66,7 +66,7 @@ def elv_go(fl_me):
     while True:
         engine.say("Choose the destination")
         engine.runAndWait()
-        des = int(input(print("Enter the destination floor(1-20) No:")))
+        des = int(input("Enter the destination floor(1-20) No:"))
         if des > 0 and des < 21:
             if fl_me > des:
                 close_door()
