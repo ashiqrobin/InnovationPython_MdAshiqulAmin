@@ -1,5 +1,7 @@
 # Mini Project(Elevator)
 
+This project is design for the elevator system of a 20 story building.
+
 ## Prerequisite
 
 1.Python 3
